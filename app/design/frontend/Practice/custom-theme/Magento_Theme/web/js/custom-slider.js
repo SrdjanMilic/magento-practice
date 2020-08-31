@@ -1,7 +1,9 @@
+// eslint-disable-next-line no-undef
 define([
     'jquery',
     'slick'
 ], function ($) {
+    'use strict';
     $(function () { // to ensure that code evaluates on page load
         $('.custom-slider').slick({
             dots: true,
