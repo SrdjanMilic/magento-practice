@@ -1,3 +1,62 @@
 // Fonts
 @font-family-name__base: 'Kanit';
 @font-family__base: @font-family-name__base, @font-family__sans-serif;
+
+// Custom colors
+@lemon-green: #74bc2c;
+
+//
+//  Color nesting
+//  ---------------------------------------------
+
+@theme__color__primary: @lemon-green;
+
+// Links
+@link__hover__color: darken(@theme__color__primary, 7%);
+@link__active__color: lighten(@theme__color__primary, 3%);
+
+//  Buttons
+@button__color: @color-darkie-gray;
+@button__background: @color-gray95;
+@button__border: 1px solid @button__background;
+
+//  Primary button
+@button-primary__background: @theme__color__primary;
+@button-primary__border: 1px solid @theme__color__primary;
+@button-primary__color: @color-white;
+@button-primary__hover__background: darken(@theme__color__primary, 5%);
+@button-primary__hover__border: 1px solid @theme__color__primary;
+@button-primary__hover__color: @button-primary__color;
+
+// Header
+@header__background-color: @color-gray95;
+
+//
+//  Navigation variables
+//  _____________________________________________
+
+@navigation__background: @color-black;
+@navigation-level0-item__color: @color-white;
+@navigation-level0-item__hover__color: @theme__color__primary;
+@navigation-level0-item__active__color: @link__active__color;
+@navigation-level0-item__active__border-color: @theme__color__primary;
+
+@submenu-item__background: @color-white;
+@submenu-item__hover__background: @color-gray95;
+@submenu-item__active__border-color: @theme__color__primary;
+@submenu-item__color: @color-gray-middle5;
+@submenu-item__hover__color: @color-gray-middle5;
+@submenu-item__active__border-color: @theme__color__primary;
+
+//  Desktop navigation
+@navigation-desktop-level0-item__color: @color-white;
+@navigation-desktop-level0-item__hover__color: @theme__color__primary;
+@navigation-desktop-level0-item__active__color: @theme__color__primary;
+@navigation-desktop-level0-item__active__border-color: @theme__color__primary;
+
+@submenu-desktop-item__background: @color-white;
+@submenu-desktop-item__hover__background: @color-gray95;
+@submenu-desktop-item__active__border-color: @theme__color__primary;
+@submenu-desktop-item__color: @color-gray-middle5;
+@submenu-desktop-item__hover__color: @color-gray-middle5;
+@submenu-desktop-item__active__border-color: @theme__color__primary;
