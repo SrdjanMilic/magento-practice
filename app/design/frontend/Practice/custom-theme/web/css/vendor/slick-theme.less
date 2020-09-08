@@ -5,7 +5,7 @@
 @slick-font-path: "./fonts/";
 @slick-font-family: "slick";
 @slick-loader-path: "./";
-@slick-arrow-color: #192131;
+@slick-arrow-color: #fff;
 @slick-dot-color: @slick-arrow-color;
 @slick-dot-color-active: @slick-arrow-color;
 @slick-prev-character: "❮";
@@ -13,7 +13,7 @@
 @slick-dot-character: "•";
 @slick-dot-size: 35px;
 @slick-opacity-default: 0.75;
-@slick-opacity-on-hover: @slick-opacity-default;
+@slick-opacity-on-hover: transparent;
 @slick-opacity-not-active: 0.25;
 
 /* Slider */
@@ -26,13 +26,12 @@
 .slick-next {
     position: absolute;
     display: block;
-    height: 34px;
-    width: 34px;
+    height: auto;
+    width: auto;
     line-height: 0;
     font-size: 0;
     cursor: pointer;
-    background: #fff;
-    color: transparent;
+    background: transparent;
     top: 50%;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
@@ -42,8 +41,10 @@
     outline: none;
     z-index: 1;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         outline: none;
+        background: transparent;
     }
 
     &.slick-disabled:before {
@@ -51,12 +52,12 @@
     }
 }
 
-.slick-prev:before, .slick-next:before {
+.slick-prev:before,
+.slick-next:before {
     font-family: @slick-font-family;
-    font-size: 20px;
+    font-size: 34px;
     line-height: 1;
     color: @slick-arrow-color;
-    opacity: @slick-opacity-default;
     -webkit-font-smoothing: antialiased;
 
     & when ( @slick-font-family = 'slick' ) {
@@ -72,11 +73,11 @@
 }
 
 .slick-prev {
-    left: 8px;
+    left: 6px;
 
     [dir="rtl"] & {
         left: auto;
-        right: 8px;
+        right: 6px;
     }
 
     &:before {
@@ -89,10 +90,10 @@
 }
 
 .slick-next {
-    right: 8px;
+    right: 6px;
 
     [dir="rtl"] & {
-        left: 8px;
+        left: 6px;
         right: auto;
     }
 
@@ -143,7 +144,8 @@
             padding: 5px;
             cursor: pointer;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 outline: none;
 
                 &:before {
