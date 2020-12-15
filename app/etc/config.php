@@ -294,6 +294,7 @@ return [
         'Klarna_Onsitemessaging' => 1,
         'Klarna_Kp' => 1,
         'Learning_BikeMaterial' => 1,
+        'Learning_ExampleAdminNewPage' => 1,
         'Learning_FirstUnit' => 1,
         'Learning_GreetingMessage' => 1,
         'Learning_HelloPage' => 1,
