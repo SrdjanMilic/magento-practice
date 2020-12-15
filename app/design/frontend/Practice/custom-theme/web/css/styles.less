@@ -1,18 +1,35 @@
+@import 'vendor/slick-theme.less';
+
+@color-white: #fff;
+@color-black: #000;
+@font-weight__bold: bold;
+
 //
 // Debugging hints fix for the eye
 //
+body {
+    background-color: @color-white;
+}
 
 .debugging-hints {
     display: block;
 }
 
 .debugging-hint-template-file {
-    font-weight: 700 !important;
+    font-weight: @font-weight__bold !important;
 }
 
 .debugging-hint-block-class {
     color: #0e1424 !important;
-    font-weight: 700 !important;
+    font-weight: @font-weight__bold !important;
+}
+
+// Luma fixes
+.product-info-main {
+    .action.tocompare {
+        &:extend(.abs-action-addto-product all);
+        vertical-align: unset;
+    }
 }
 
 // Button styles reset
@@ -21,13 +38,41 @@ button {
         border: unset;
     }
     &:focus {
-        background: #fff;
+        background: @color-white;
         border: unset;
         color: #192131;
     }
 }
 
+//
 // Slick slider
+//
+
+@slick-dot-color: @color-black;
+@slick-dot-size: 35px;
+
+.slick-dots {
+    li {
+        button {
+            &:before {
+                color: @color-black;
+                opacity: @slick-opacity-not-active;
+            }
+        }
+
+        &.slick-active button:before {
+            color: @color-black;
+            opacity: unset;
+        }
+    }
+}
+
+.slick-slider {
+    .slick-prev:before,
+    .slick-next:before {
+        font-size: 20px;
+    }
+}
 .loading {
     background: #fff url('ajax-loader.gif') center center no-repeat;
     height: 442.717px;
@@ -36,6 +81,7 @@ button {
 
 .custom-slider {
     display: none;
+    margin-bottom: 70px;
 }
 
 .product-social-links {
