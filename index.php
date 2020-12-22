@@ -9,7 +9,7 @@
  * $params[\Magento\Store\Model\StoreManager::PARAM_RUN_CODE] = 'website2';
  * $params[\Magento\Store\Model\StoreManager::PARAM_RUN_TYPE] = 'website';
  * $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
- * \/** @var \Magento\Framework\App\Http $app *\/
+ * \/** @var Http $app *\/
  * $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
  * $bootstrap->run($app);
  * --------------------------------------------
@@ -18,9 +18,16 @@
  * See COPYING.txt for license details.
  */
 
+use Magento\Framework\App\Bootstrap;
+use Magento\Framework\App\Http;
+
+/* Show exceptions on blank screen */
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 try {
     require __DIR__ . '/app/bootstrap.php';
-} catch (\Exception $e) {
+} catch (Exception $e) {
     echo <<<HTML
 <div style="font:12px/1.35em arial, helvetica, sans-serif;">
     <div style="margin:0 0 25px 0; border-bottom:1px solid #ccc;">
@@ -33,7 +40,7 @@ HTML;
     exit(1);
 }
 
-$bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
-/** @var \Magento\Framework\App\Http $app */
-$app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);
+$bootstrap = Bootstrap::create(BP, $_SERVER);
+/** @var Http $app */
+$app = $bootstrap->createApplication(Http::class);
 $bootstrap->run($app);
