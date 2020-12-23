@@ -68,3 +68,5 @@ atlassian*
 !/generated/.htaccess
 .DS_Store
 /auth.json
+/lib/web/css/docs/docs.css
+/lib/web/css/docs/docs.css.map
