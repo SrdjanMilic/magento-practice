@@ -2,26 +2,10 @@
 
 @color-white: #fff;
 @color-black: #000;
-@font-weight__bold: bold;
+@slick-dot-size: 35px;
 
-//
-// Debugging hints fix for the eye
-//
 body {
     background-color: @color-white;
-}
-
-.debugging-hints {
-    display: block;
-}
-
-.debugging-hint-template-file {
-    font-weight: @font-weight__bold !important;
-}
-
-.debugging-hint-block-class {
-    color: #0e1424 !important;
-    font-weight: @font-weight__bold !important;
 }
 
 // Luma fixes
@@ -37,6 +21,7 @@ button {
     &:hover {
         border: unset;
     }
+
     &:focus {
         background: @color-white;
         border: unset;
@@ -47,9 +32,6 @@ button {
 //
 // Slick slider
 //
-
-@slick-dot-color: @color-black;
-@slick-dot-size: 35px;
 
 .slick-dots {
     li {
@@ -73,6 +55,7 @@ button {
         font-size: 20px;
     }
 }
+
 .loading {
     background: #fff url('ajax-loader.gif') center center no-repeat;
     height: 442.717px;
