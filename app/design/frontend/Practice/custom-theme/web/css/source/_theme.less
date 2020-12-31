@@ -11,6 +11,9 @@
 
 @theme__color__primary: @lemon-green;
 
+// Focus
+@focus__color: @lemon-green;
+
 // Links
 @link__hover__color: darken(@theme__color__primary, 7%);
 @link__active__color: lighten(@theme__color__primary, 3%);
@@ -60,30 +63,3 @@
 @submenu-desktop-item__color: @color-gray-middle5;
 @submenu-desktop-item__hover__color: @color-gray-middle5;
 @submenu-desktop-item__active__border-color: @theme__color__primary;
-
-// Create account page styles
-@form-field-type-revert: block;
-
-@form-element-input__focus__border: @lemon-green;
-
-.form-create-account {
-    .fieldset {
-        .lib-form-fieldset();
-
-        > .field {
-            .lib-form-field(
-                @_column: true;
-                @_column-number: 2;
-            );
-        }
-
-        .field-name-lastname,
-        .password {
-            padding: 0 0 0 12px;
-        }
-    }
-}
-
-.column:not(.sidebar-main) form .actions-toolbar, .column:not(.sidebar-additional) form .actions-toolbar {
-    margin-left: 0;
-}
